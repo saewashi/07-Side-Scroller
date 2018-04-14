@@ -16,7 +16,7 @@ class Level:
 			self.level.append(l)
 		if len(self.level):
 			self.screen = pygame.Surface((len(self.level[0])*self.w,len(self.level)*self.h))
-			self.screen.fill(Color.gray_7)
+			self.screen.fill(Color.violet_7)
 			j = 0
 			for r in self.level:
 				i = 0
@@ -87,7 +87,7 @@ class Floor(pygame.sprite.Sprite):
 	def __init__(self,gravity,position,size):
 		pygame.sprite.Sprite.__init__(self)
 		self.image = pygame.Surface(size)
-		self.image.fill(Color.gray_9)
+		self.image.fill(Color.lime_9)
 		self.rect = self.image.get_rect()
 		(self.rect.x,self.rect.y) = position
 		self.gravity = gravity
@@ -97,5 +97,8 @@ class Floor(pygame.sprite.Sprite):
 	
 	def update(self):
 		'''
+		(dx,dy) = self.direction
+		self.rect.x += dx
+		self.rect.y += dy
 		update behavior
 		'''	

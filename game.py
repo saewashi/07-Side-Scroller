@@ -7,14 +7,14 @@ from Player import Player
 from Enemy import Enemy
 from Level import Level, Floor
 from itertools import repeat
-assert sys.version_info >= (3,4), 'This script requires at least Python 3.4' 
+assert sys.version_info >= (3,4), 'This script requires at least Python 3.4'
 
 logging.basicConfig(format='[%(filename)s:%(lineno)d] %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 screen_size = (800,600)
 FPS = 60
-gravity = 2
+gravity = 3
 friction = 0.3
 lives = 5
 
@@ -28,6 +28,8 @@ def main():
 	offset = repeat((0, 0))
 
 	sound = Sound()
+	#sound.add_music('Ambient_Blues_Joe_ID_773.mp3')
+	sound.play_music()
 	'''
 	Add whatever soundtrack files you want to the mp3 folder, and then add them to the soundtrack by calling
 
